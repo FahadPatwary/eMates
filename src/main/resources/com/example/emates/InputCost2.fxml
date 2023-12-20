@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.emates.InputCost2">
+   <children>
+      <HBox layoutX="-4.0" layoutY="-3.0" prefHeight="734.0" prefWidth="1294.0">
+         <children>
+            <AnchorPane prefHeight="709.0" prefWidth="1284.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="130.0" layoutX="177.0" stroke="#67baff" strokeType="INSIDE" strokeWidth="0.0" width="1107.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.03921568766236305" green="0.3529411852359772" blue="0.8196078538894653" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.03921568766236305" green="0.3529411852359772" blue="0.8196078538894653" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Label layoutX="200.0" layoutY="48.0" text="eMates" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutY="3.0" prefHeight="721.0" prefWidth="177.0" style="-fx-background-color: #1e90ff;">
+                     <children>
+                        <ImageView fitHeight="95.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@IconDash.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="42.0" top="21.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Button fx:id="cost_bt12" mnemonicParsing="false" onAction="#switchtoDashboard" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="Dashboard" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="30.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt1" mnemonicParsing="false" onAction="#switchtoPayment" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="Received" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt2" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #026dd1;" text="Expenses" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt11" mnemonicParsing="false" onAction="#switchtofoodmenu" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="Food Menu" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt3" mnemonicParsing="false" onAction="#switchtoChat" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="Chat" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt" mnemonicParsing="false" onAction="#switchtoBulletBoard" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="BulletBoard" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt4" mnemonicParsing="false" onAction="#switchtoLogin" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #FF1E1E;" text="Logout" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Label layoutX="200.0" layoutY="83.0" text="A Mess Management System" textFill="WHITE" />
+                  <TableView fx:id="paymentTableView" layoutX="724.0" layoutY="150.0" prefHeight="540.0" prefWidth="474.0" />
+                  <AnchorPane layoutX="354.0" layoutY="323.0">
+                     <children>
+                        <TextField fx:id="amountTf" prefHeight="40.0" prefWidth="200.0" promptText="Amount" />
+                        <TextArea fx:id="DesFx" layoutY="48.0" prefHeight="146.0" prefWidth="200.0" promptText="Description" />
+                        <Button layoutY="209.0" mnemonicParsing="false" onAction="#savePayment" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #026dd1;" text="Save" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteButton" layoutY="260.0" mnemonicParsing="false" onAction="#deletePayment" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #FF1E1E;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="269.0" layoutY="176.0">
+                     <children>
+                        <Rectangle arcHeight="50.0" arcWidth="50.0" height="95.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="342.0">
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.047514621168375015" green="0.17117446660995483" blue="0.7894737124443054" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color green="0.75" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Rectangle>
+                        <Label layoutX="35.0" layoutY="34.0" text="Total: " textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="231.0" layoutY="34.0" text="Taka" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalAmountDisplay" alignment="CENTER_RIGHT" layoutX="154.0" layoutY="34.0" prefHeight="27.0" prefWidth="69.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <Label layoutX="1092.0" layoutY="73.0" text="Expenses" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

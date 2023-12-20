@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.emates.Dashboard">
+   <children>
+      <HBox prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane layoutX="685.0" layoutY="155.0" prefHeight="522.0" prefWidth="563.0">
+                     <children>
+                        <Label fx:id="NameLabelFx" layoutX="294.0" layoutY="249.0" prefHeight="70.0" prefWidth="233.0" text="Name">
+                           <font>
+                              <Font name="System Bold" size="48.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="341.0" fitWidth="352.0" layoutX="-43.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@dashImg.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="NameLabelFx1" layoutX="309.0" layoutY="231.0" prefHeight="35.0" prefWidth="52.0" text="Hi!" textFill="#152939">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="112.0" layoutY="269.0" prefHeight="193.0" prefWidth="426.0" text="Welcome" textFill="#0a5ad1">
+                           <font>
+                              <Font name="System Bold" size="96.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="130.0" layoutX="176.0" stroke="#67baff" strokeType="INSIDE" strokeWidth="0.0" width="1107.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.053849902004003525" green="0.40421944856643677" blue="0.8947368264198303" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.1411764770746231" blue="0.7647058963775635" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Label layoutX="200.0" layoutY="48.0" text="eMates" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="721.0" prefWidth="177.0" style="-fx-background-color: #1e90ff;">
+                     <children>
+                        <ImageView fitHeight="95.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@IconDash.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="42.0" top="21.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Button fx:id="cost_bt12" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #026dd1;" text="Dashboard" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="30.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt1" mnemonicParsing="false" onAction="#switchtoPayment" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="Received" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt2" mnemonicParsing="false" onAction="#switchtoExpenses" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="Expenses" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt11" mnemonicParsing="false" onAction="#switchtofoodmenu" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="Meal" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt3" mnemonicParsing="false" onAction="#switchtoChat" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="Chat" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt" mnemonicParsing="false" onAction="#switchtoBulletBoard" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="BulletBoard" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt4" mnemonicParsing="false" onAction="#switchtoLogin" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #FF1E1E;" text="Logout" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Label layoutX="200.0" layoutY="83.0" text="A Mess Management System" textFill="WHITE" />
+                  <Label fx:id="TimeFx" layoutX="1036.0" layoutY="64.0" text="Time" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#1f93ffc9" height="112.0" layoutX="200.0" layoutY="155.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="226.0" />
+                  <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#1f93ffca" height="112.0" layoutX="441.0" layoutY="155.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="226.0" />
+                  <Label layoutX="454.0" layoutY="175.0" text="Total Expenses" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="215.0" layoutY="175.0" text="Total Received" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#1f93ffc9" height="112.0" layoutX="200.0" layoutY="283.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="226.0" />
+                  <Label layoutX="215.0" layoutY="302.0" text="Available Balance" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalAmount" layoutX="255.0" layoutY="211.0" prefHeight="35.0" prefWidth="154.0" style="-fx-text-alignment: left;" text="0000" textFill="#2400c2">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="215.0" layoutY="211.0" text="TK">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="paymentLabel" layoutX="493.0" layoutY="211.0" prefHeight="35.0" prefWidth="147.0" style="-fx-text-alignment: left;" text="0000" textFill="#2400c2">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="454.0" layoutY="211.0" text="TK">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="AvailBlnc" layoutX="255.0" layoutY="339.0" prefHeight="35.0" prefWidth="147.0" style="-fx-text-alignment: left;" text="0000" textFill="#2400c2">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="215.0" layoutY="339.0" text="TK">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

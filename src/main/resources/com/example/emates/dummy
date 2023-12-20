@@ -1,0 +1,190 @@
+1. File : BulletBoardApp
+package com.example.emates;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class BulletBoardApp extends Application {
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/emates/bulletboard.fxml"));
+        Parent root = loader.load();
+
+        primaryStage.setTitle("Bullet Board");
+        primaryStage.setScene(new Scene(root, 1000, 700));
+        primaryStage.show();
+    }
+}
+
+2. File : BulletBoardController
+package com.example.emates;
+          import javafx.concurrent.Task;
+          import javafx.fxml.FXML;
+          import javafx.scene.control.Button;
+          import javafx.scene.control.Label;
+          import javafx.scene.control.TextField;
+          import javafx.scene.control.TitledPane;
+
+          import java.io.BufferedWriter;
+          import java.io.FileWriter;
+          import java.io.IOException;
+          import java.util.concurrent.Executors;
+
+          public class BulletBoardController {
+
+              @FXML
+              private TextField noticename_fl;
+
+              @FXML
+              private TextField noticedes_field;
+
+              @FXML
+              private TextField user_field;
+
+              @FXML
+              private Button add_button;
+
+              @FXML
+              private Label descrip_leb;
+
+              @FXML
+              private Label userleb;
+
+              @FXML
+              private TitledPane noticetitle;
+
+              @FXML
+              private void initialize() {
+                  // Initialize your UI elements here
+              }
+
+              @FXML
+              private void addButtonClicked() {
+                  String noticeName = noticename_fl.getText();
+                  String noticeDescription = noticedes_field.getText();
+                  String username = user_field.getText();
+
+                  if (!noticeName.isEmpty() && !noticeDescription.isEmpty() && !username.isEmpty()) {
+                      // Create a background Task to save the notice data
+                      Task<Void> saveNoticeTask = new Task<Void>() {
+                          @Override
+                          protected Void call() throws Exception {
+                              saveNoticeToFile(noticeName, noticeDescription, username);
+                              return null;
+                          }
+                      };
+
+                      // Set up the task to run in a separate thread
+                      Executors.newCachedThreadPool().submit(saveNoticeTask);
+
+                      // Update the UI or display a message while saving
+                      saveNoticeTask.setOnSucceeded(event -> {
+                          // Update the UI here if needed
+                          // For example, add a new TitledPane
+                          TitledPane newTitledPane = new TitledPane();
+                          newTitledPane.setText(noticeName);
+                          descrip_leb.setText(noticeDescription);
+                          userleb.setText("UserName: " + username);
+                          newTitledPane.setContent(noticetitle.getContent());
+                          // Add the newTitledPane to your UI
+
+                          // Clear the input fields or perform other actions as needed
+                          noticename_fl.clear();
+                          noticedes_field.clear();
+                          user_field.clear();
+                      });
+                  }
+              }
+
+              private void saveNoticeToFile(String noticeName, String noticeDescription, String username) {
+                  // Implement code to save notice data to the notice.txt file here
+                  try (BufferedWriter writer = new BufferedWriter(new FileWriter("com/example/emates/notice.txt", true))) {
+                      writer.write(noticeName + "&" + noticeDescription + "&" + username);
+                      writer.newLine();
+                  } catch (IOException e) {
+                      e.printStackTrace();
+                  }
+              }
+          }
+3. File :bulletboard.fxml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.emates.BulletBoardController">
+   <children>
+      <BorderPane layoutX="-14.0" layoutY="264.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="642.0" prefWidth="230.0" style="-fx-background-color: #728FCE;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="dashboard_menu" mnemonicParsing="false" prefHeight="44.0" prefWidth="235.0" style="-fx-background-color: #728FCE;" text="DashBoard" textFill="WHITE">
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <AnchorPane prefHeight="700.0" prefWidth="317.0" style="-fx-background-color: #728FCE;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="notice_des_leb" layoutX="18.0" layoutY="147.0" text="Notice Description" />
+                  <Label fx:id="username" layoutX="58.0" layoutY="241.0" text="UserName" />
+                  <TextField fx:id="noticedes_field" layoutX="126.0" layoutY="143.0" prefHeight="78.0" prefWidth="182.0" />
+                  <TextField fx:id="user_field" layoutX="126.0" layoutY="237.0" prefHeight="26.0" prefWidth="185.0" />
+                  <Button fx:id="add_button" layoutX="58.0" layoutY="310.0" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="46.0" prefWidth="90.0" text="Post" />
+                  <Label fx:id="notice_name_leb1" layoutX="14.0" layoutY="110.0" text="Notice Name" />
+                  <TextField fx:id="noticename_fl" layoutX="126.0" layoutY="106.0" prefHeight="26.0" prefWidth="182.0" />
+               </children>
+            </AnchorPane>
+         </right>
+         <top>
+            <Pane prefHeight="25.0" prefWidth="1000.0" style="-fx-background-color: #728FCE;" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox fx:id="noticespace" prefHeight="675.0" prefWidth="454.0">
+                     <children>
+                        <TitledPane fx:id="noticetitle" animated="false" prefHeight="131.0" prefWidth="454.0" text="Noticenametitle">
+                          <content>
+                            <AnchorPane fx:id="view_notice" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="descrip_leb" layoutX="30.0" layoutY="23.0" text="Description" />
+                                    <Label fx:id="userleb" layoutX="31.0" layoutY="70.0" text="UserName:" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
+
+These are 3 code file for javaFX. I want to create a bullet board feature. There need to be multithreading in it. this is the code of fxml file of a bulletboard feature. Here i want to implement theading like the ticket booking system. the login and signup isn't done so use random username like Suma, Fahad and so on(for 10 users). Here the users will create notice . They will input informations like noticename_fl "About Late" , noticedes_field "I will be late today. leave me some food", user_field " Suma". when this button add_button is clicked then save these details in notice.txt file. Then also when button is clicked the details of noticename will be displayed in noticetitle , descrip_leb will display the user inputed description. userleb will display user name. the information in notice.txt will be separated with & and for each data input the data will saved in different lines
+ when a new notice is created a new TitledPane will also be created in the HBox. So each time a notice is created a new TitledPane with the name of the notice name will be created. Initially there shouldn't be any TitledPane. After each user entry a new one will be created . Make sure to input the data in the
+ notice.txt file and save them. data should be separated by "&".
+
+

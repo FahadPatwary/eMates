@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.emates.FoodMenu">
+   <children>
+      <HBox layoutX="-4.0" layoutY="-3.0" prefHeight="734.0" prefWidth="1294.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="130.0" layoutX="177.0" stroke="#67baff" strokeType="INSIDE" strokeWidth="0.0" width="1107.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.03921568766236305" green="0.3529411852359772" blue="0.8196078538894653" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.03921568766236305" green="0.3529411852359772" blue="0.8196078538894653" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Label layoutX="200.0" layoutY="48.0" text="eMates" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutY="3.0" prefHeight="721.0" prefWidth="177.0" style="-fx-background-color: #1e90ff;">
+                     <children>
+                        <ImageView fitHeight="95.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@IconDash.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="42.0" top="21.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Button fx:id="cost_bt12" mnemonicParsing="false" onAction="#switchtoDashboard" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="Dashboard" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="30.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt1" mnemonicParsing="false" onAction="#switchtoPayment" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="Received" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt2" mnemonicParsing="false" onAction="#switchtoExpenses" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="Expenses" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt11" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #026dd1;" text="Meal" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt3" mnemonicParsing="false" onAction="#switchtoChat" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="Chat" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt" mnemonicParsing="false" onAction="#switchtoBulletBoard" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5FBDFF;" text="BulletBoard" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="cost_bt4" mnemonicParsing="false" onAction="#switchtoLogin" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #FF1E1E;" text="Logout" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Label layoutX="200.0" layoutY="83.0" text="A Mess Management System" textFill="WHITE" />
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" height="213.0" layoutX="200.0" layoutY="154.0" opacity="0.79" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="342.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color green="0.75" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color green="0.75" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.06828703731298447" green="0.2924961447715759" blue="0.7763158082962036" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Label layoutX="314.0" layoutY="171.0" text="Update Meal" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="243.0" layoutY="228.0" text="Select Date:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="243.0" layoutY="265.0" text="Select Meal:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="selectMeal" layoutX="335.0" layoutY="263.0" prefHeight="25.0" prefWidth="177.0" promptText="Select Meal" />
+                  <DatePicker fx:id="datePicker" layoutX="336.0" layoutY="226.0" promptText="Select Date" />
+                  <Button fx:id="updateBtn" layoutX="345.0" layoutY="328.0" mnemonicParsing="false" onAction="#StoreInfo" text="Update" />
+                  <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#a1d2ff" height="518.0" layoutX="581.0" layoutY="154.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="643.0" />
+                  <VBox fx:id="mealBoard" layoutX="643.0" layoutY="181.0" prefHeight="463.0" prefWidth="518.0" />
+               </children>
+
+            </AnchorPane>
+
+         </children>
+      </HBox>
+      <Label layoutX="1115.0" layoutY="75.0" text="Meal" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

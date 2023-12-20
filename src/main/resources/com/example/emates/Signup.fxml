@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.emates.Signup">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="1288.0" layoutY="580.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Vector1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="1288.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Vector2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="827.0" layoutY="167.0" text="eMates">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="name" alignment="CENTER" layoutX="766.0" layoutY="245.0" prefHeight="40.0" prefWidth="200.0" promptText="Name" />
+      <TextField fx:id="mobile" alignment="CENTER" layoutX="766.0" layoutY="294.0" prefHeight="40.0" prefWidth="200.0" promptText="Mobile" />
+      <TextField fx:id="id" alignment="CENTER" layoutX="766.0" layoutY="344.0" prefHeight="40.0" prefWidth="200.0" promptText="ID" />
+      <PasswordField fx:id="passwordData" alignment="CENTER" layoutX="766.0" layoutY="394.0" prefHeight="40.0" prefWidth="200.0" promptText="Password" />
+      <Button layoutX="766.0" layoutY="449.0" mnemonicParsing="false" onAction="#storeUser" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #00A9FF;" text="Signup" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Label layoutX="780.0" layoutY="520.0" text="Already have an account?" />
+      <Hyperlink layoutX="920.0" layoutY="517.0" onAction="#switchtoLogin" text="Login" />
+      <ImageView fitHeight="269.0" fitWidth="266.0" layoutX="213.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@clip-completed-form.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="799.0" layoutY="194.0" text="Registration" textFill="#00a9ff">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
